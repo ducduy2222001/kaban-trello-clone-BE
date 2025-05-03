@@ -1,9 +1,9 @@
 {
-  "name": "nodejs-expressjs-mongodb-base-project",
+  "name": "kanban-trello-clone",
   "private": true,
   "version": "1.0.0",
-  "author": "TrungQuanDev - Một Lập Trình Viên",
-  "description": "https://youtube.com/@trungquandev",
+  "author": "Duc Duy",
+  "description": "",
   "engines": {
     "node": ">=18.x"
   },
