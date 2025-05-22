@@ -3,13 +3,12 @@ import express from "express";
 import exitHook from "async-exit-hook";
 import { CLOSE_DB, CONNECT_DB } from "~/config/mongodb";
 import { env } from "~/config/environment";
+import { APIs } from "~/routes/index.js";
 
 const START_SERVER = async () => {
   const app = express();
 
-  app.get("/", async (req, res) => {
-    res.end("<h1>Hello World!</h1><hr>");
-  });
+  app.use("/", APIs);
 
   app.listen(env.APP_PORT, env.APP_HOST, () => {
     // eslint-disable-next-line no-console
