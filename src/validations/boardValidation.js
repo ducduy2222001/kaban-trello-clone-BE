@@ -1,5 +1,6 @@
 import Joi from "joi";
 import { StatusCodes } from "http-status-codes";
+import ApiError from "~/utils/ApiError";
 
 const validationCreate = async (req, res, next) => {
   const schemaBoard = Joi.object({
@@ -12,9 +13,7 @@ const validationCreate = async (req, res, next) => {
     // validation passed => run controller
     next();
   } catch (error) {
-    res.status(StatusCodes.UNPROCESSABLE_ENTITY).json({
-      error: new Error(error).message,
-    });
+    next(new ApiError(StatusCodes.UNPROCESSABLE_ENTITY, error.message));
   }
 };
 

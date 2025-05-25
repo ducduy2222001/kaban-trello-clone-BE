@@ -4,9 +4,7 @@ const createNewBoard = async (req, res, next) => {
   try {
     res.status(StatusCodes.CREATED).json({ message: "Post: create new board" });
   } catch (error) {
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      error: error.message,
-    });
+    next(error);
   }
 };
 
