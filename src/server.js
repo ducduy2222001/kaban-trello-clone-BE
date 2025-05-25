@@ -8,6 +8,9 @@ import { APIs } from "~/routes/index.js";
 const START_SERVER = async () => {
   const app = express();
 
+  // Allow use req.body json data
+  app.use(express.json());
+
   app.use("/", APIs);
 
   app.listen(env.APP_PORT, env.APP_HOST, () => {
